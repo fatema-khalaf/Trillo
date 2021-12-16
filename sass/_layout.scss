@@ -4,6 +4,11 @@
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 .header {
   font-size: 1.4rem;
@@ -13,9 +18,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: $bp-larg) {
+    font-size: 50%; // 1.4/0.6= 50%
+  }
 }
 .content {
   display: flex;
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -35,6 +46,9 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
 }
 .description {
   background-color: #fff;
@@ -42,6 +56,10 @@
   padding: 3rem;
   flex: 0 0 60%; // give a width to this div
   margin-right: 4.5rem;
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
 }
 .user-reviews {
   flex: 1; // occupy the remaining space
