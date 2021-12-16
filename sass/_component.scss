@@ -9,9 +9,16 @@
 // SEARCH
 .search {
   flex: 0 0 40%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%; // width
+    background-color: var(--color-grey-light-2);
+  }
 
   &__input {
     font-family: inherit;
@@ -162,12 +169,22 @@
       justify-content: center;
       padding: 2rem;
     }
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
   }
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; // take the color of the closest color properity
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5;
+      height: 1.5;
+    }
   }
 }
 
@@ -202,6 +219,9 @@
   // justify-content: space-between;
   align-items: center;
   border-bottom: var(--line);
+  @media only screen and (max-width: $bp-tiny) {
+    flex-wrap: wrap;
+  }
 
   &__heading {
     font-size: 2.25rem;
@@ -209,10 +229,20 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
+    @media only screen and (max-width: $bp-tiny) {
+      padding: 1rem 2rem;
+    }
   }
   &__stars {
     margin-right: auto;
     display: flex; // it does the same as line height:0
+    @media only screen and (max-width: $bp-tiny) {
+      margin-right: auto;
+    }
   }
   &__icon-star,
   &__icon-location {
@@ -224,6 +254,9 @@
     font-size: 1.2rem;
     display: flex;
     vertical-align: center;
+    @media only screen and (max-width: $bp-tiny) {
+      padding: 0.5rem 2rem;
+    }
   }
   &__icon-location {
     margin-right: 0.5rem;
@@ -239,15 +272,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0.25rem 1.5rem;
+    }
+    @media only screen and (max-width: $bp-tiny) {
+      order: 1;
+      flex: 0 0 100%;
+      margin: 0;
+    }
   }
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
